@@ -1,5 +1,5 @@
 from random import randint
-
+import time
 
 def partition(a, lo, hi):
     pivot = a[hi]
@@ -26,10 +26,17 @@ def is_sorted(a):
             return False
     return True
 
-a = [randint(-100, 100) for x in range(4)]
-print(a)
+a = [randint(0, 10**5) for x in range(10**5)]
+b = [randint(0, 10**5) for x in range(10**5)]
+# print(a)
+start_time = time.time()
 quick_sort(a, 0, len(a) - 1)
-print(a)
+print("--- %s seconds ---" % (time.time() - start_time))
 print(is_sorted(a))
+start_time = time.time()
+sorted(b)
+print("--- %s seconds ---" % (time.time() - start_time))
+# print(a)
+print(is_sorted(b))
 
 

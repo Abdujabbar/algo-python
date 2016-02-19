@@ -1,4 +1,4 @@
-
+import time
 import random
 
 def count_sort(a):
@@ -25,6 +25,8 @@ def is_sorted(a):
 			return False
 	return True
 
-arr = [random.randrange(0, 1000) for x in range(1000000)]
+arr = [random.randrange(0, 10**5) for x in range(10**5)]
+start_time = time.time()
 a =count_sort(arr)
+print("--- %s seconds ---" % (time.time() - start_time))
 print(is_sorted(a))

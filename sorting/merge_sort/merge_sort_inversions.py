@@ -1,6 +1,8 @@
 from random import randint
 import time
 
+inv = 0
+
 def merge_sort(a):
     if len(a) <= 1:
         return a
@@ -13,6 +15,7 @@ def merge_sort(a):
 
 
 def merge(left, right):
+    global inv
     result = []
     i = 0
     j = 0
@@ -23,6 +26,7 @@ def merge(left, right):
                 i += 1
             else:
                 result.append(right[j])
+                inv += len(left) - i
                 j += 1
         elif i < len(left):
             result.append(left[i])
@@ -32,15 +36,6 @@ def merge(left, right):
             j += 1
     return result
 
+aa = merge_sort(a)
 
-def is_sorted(a):
-    for i in range(len(a) - 1):
-        if a[i] > a[i + 1]:
-            return False
-    return True
-a = [randint(0, 10 ** 5) for x in range(10 ** 5)]
-start_time = time.time()
-sorted_a = merge_sort(a)
-print("--- %s seconds ---" % (time.time() - start_time))
-print(is_sorted(sorted_a))
-
+print(inv)
