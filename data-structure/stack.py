@@ -32,8 +32,10 @@ class Stack(object):
 
 while True:
     command, value = input().split()
-    print(command)
-    print(value)
+    # print(command)
+    # print(value)
+
+
 
 
     
