@@ -8,4 +8,4 @@ def replace_spaces(s):
             r += i
     return r
 
-print(replace_spaces("hello wo rl d"))
+print(replace_spaces("hello w  o rl d"))
