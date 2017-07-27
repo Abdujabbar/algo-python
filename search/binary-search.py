@@ -1,7 +1,6 @@
-
-
 def midpoint(imin, imax):
 	return (imax + imin) >> 1
+
 
 def binary_search(arrlist, item, left, right):
 	if right < left:
